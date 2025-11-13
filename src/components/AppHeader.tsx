@@ -27,22 +27,22 @@ function AppHeader() {
                             <NavigationMenuList className="flex flex-row gap-2">
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild>
-                                        <Link href="#">
+                                        <Link href="#" className="hover:text-red-700">
                                             {t('Navigation.NewArrivals')}
                                         </Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <NavigationMenuTrigger>
+                                    <NavigationMenuTrigger className="hover:text-red-700">
                                         {t('Navigation.Collections.title')}
                                     </NavigationMenuTrigger>
-                                    <NavigationMenuContent className="flex flex-row justify-between">
+                                    <NavigationMenuContent className="flex flex-row justify-between md:w-[400px] lg:w-[500px]">
                                         <NavigationMenuLink asChild>
                                             <Link href="#">
                                                 {t('Navigation.Collections.highlight.title')}
                                             </Link>
                                         </NavigationMenuLink>
-                                        <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-2">
+                                        <ul className="grid gap-3 p-4 lg:grid-cols-2">
                                             <li>
                                                 <NavigationMenuLink asChild>
                                                     <Link href="#">
@@ -90,28 +90,28 @@ function AppHeader() {
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild>
-                                        <Link href="#">
+                                        <Link href="#" className="hover:text-red-700">
                                             {t('Navigation.AllItems')}
                                         </Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild>
-                                        <Link href="#">
+                                        <Link href="#" className="hover:text-red-700">
                                             {t('Navigation.News')}
                                         </Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild>
-                                        <Link href="#">
+                                        <Link href="#" className="hover:text-red-700">
                                             {t('Navigation.About')}
                                         </Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild>
-                                        <Link href="#" className="text-red-500">
+                                        <Link href="#" className="text-red-500 hover:text-red-700">
                                             {t('Navigation.Sale')}
                                         </Link>
                                     </NavigationMenuLink>
@@ -124,21 +124,21 @@ function AppHeader() {
                             <NavigationMenuList className="flex flex-row gap-2">
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild>
-                                        <Link href="#">
+                                        <Link href="#" className="transition-all hover:drop-shadow-red-700 hover:drop-shadow-md hover:scale-110">
                                             <SearchIcon/>
                                         </Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild>
-                                        <Link href="#">
+                                        <Link href="#" className="transition-all hover:drop-shadow-red-700 hover:drop-shadow-md hover:scale-110">
                                             <ShoppingCartIcon/>
                                         </Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
                                     <NavigationMenuLink asChild>
-                                        <Link href="#">
+                                        <Link href="#" className="transition-all hover:drop-shadow-red-700 hover:drop-shadow-md hover:scale-110">
                                             <UserIcon/>
                                         </Link>
                                     </NavigationMenuLink>
