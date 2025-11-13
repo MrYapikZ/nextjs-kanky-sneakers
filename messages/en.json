@@ -1,10 +1,35 @@
 {
   "App": {
     "name": "Kanky",
+    "logo": {
+      "src": "https://d2kchovjbwl1tk.cloudfront.net/vendors/11367/assets/image/1741586539641-Kanky_Logo_Header-removebg-preview_resized256-png.webp",
+      "alt": "Kanky Logo"
+    },
     "description": "| Sneakers Unofficial Website",
     "recreatedBy": {
       "name": "MrYapikZ",
       "company": "ExpiProject"
+    }
+  },
+  "Navigation": {
+    "NewArrivals": "New Arrivals",
+    "AllItems": "All Items",
+    "News": "News",
+    "About": "About",
+    "Sale": "Sale",
+    "Collections": {
+      "title": "Collections",
+      "items": {
+        "KankyShoes": "Kanky Shoes",
+        "KankySportStyle": "Kanky SportStyle",
+        "KankyClassic": "Kanky Classic",
+        "KankyBasketball": "Kanky Basketball",
+        "KankyAthletic": "Kanky Athletic",
+        "KankyNXT": "Kanky NXT"
+      },
+      "highlight": {
+        "title": "Highlight Item"
+      }
     }
   }
 }
