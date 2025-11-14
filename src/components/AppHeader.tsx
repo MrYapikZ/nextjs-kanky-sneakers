@@ -49,51 +49,53 @@ function AppHeader() {
                                         {t('Navigation.Collections.title')}
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent
-                                        className="flex flex-row justify-between md:w-[400px] lg:w-[500px]">
-                                        <NavigationMenuLink asChild>
-                                            <Link href="#">
+                                        className="flex flex-row md:w-[400px] lg:w-[500px]">
+                                        <NavigationMenuLink className="w-full">
+                                            <Link href="#"
+                                                  className="hover:text-red-700 h-full w-auto flex flex-col justify-center items-center p-2 aspect-square">
                                                 {t('Navigation.Collections.highlight.title')}
+                                                <div className="w-full h-auto aspect-square bg-red-700 rounded-2xl"/>
                                             </Link>
                                         </NavigationMenuLink>
-                                        <ul className="grid gap-3 p-4 lg:grid-cols-2">
+                                        <ul className="grid gap-3 p-4 lg:grid-cols-2 w-full">
                                             <li>
                                                 <NavigationMenuLink asChild>
-                                                    <Link href="#">
+                                                    <Link href="#" className="hover:text-red-700">
                                                         {t('Navigation.Collections.items.KankyShoes')}
                                                     </Link>
                                                 </NavigationMenuLink>
                                             </li>
                                             <li>
                                                 <NavigationMenuLink asChild>
-                                                    <Link href="#">
+                                                    <Link href="#" className="hover:text-red-700">
                                                         {t('Navigation.Collections.items.KankySportStyle')}
                                                     </Link>
                                                 </NavigationMenuLink>
                                             </li>
                                             <li>
                                                 <NavigationMenuLink asChild>
-                                                    <Link href="#">
+                                                    <Link href="#" className="hover:text-red-700">
                                                         {t('Navigation.Collections.items.KankyClassic')}
                                                     </Link>
                                                 </NavigationMenuLink>
                                             </li>
                                             <li>
                                                 <NavigationMenuLink asChild>
-                                                    <Link href="#">
+                                                    <Link href="#" className="hover:text-red-700">
                                                         {t('Navigation.Collections.items.KankyBasketball')}
                                                     </Link>
                                                 </NavigationMenuLink>
                                             </li>
                                             <li>
                                                 <NavigationMenuLink asChild>
-                                                    <Link href="#">
+                                                    <Link href="#" className="hover:text-red-700">
                                                         {t('Navigation.Collections.items.KankyAthletic')}
                                                     </Link>
                                                 </NavigationMenuLink>
                                             </li>
                                             <li>
                                                 <NavigationMenuLink asChild>
-                                                    <Link href="#">
+                                                    <Link href="#" className="hover:text-red-700">
                                                         {t('Navigation.Collections.items.KankyNXT')}
                                                     </Link>
                                                 </NavigationMenuLink>
