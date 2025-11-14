@@ -29,7 +29,7 @@ function AppHeader() {
 
                 <Link href="/">
                     <Image src={t('App.logo.src')} alt={t('App.logo.alt')} sizes="(max-width: 600px) 20vw, 256px"
-                           style={{maxWidth: '100%', height: 24, width: 'auto'}} width={256} height={24}/>
+                           style={{maxWidth: '100%', height: 24, width: 'auto'}} width={256} height={24} priority/>
                 </Link>
 
                 {!isMobile ? (
