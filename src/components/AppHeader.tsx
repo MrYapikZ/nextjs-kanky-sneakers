@@ -1,28 +1,40 @@
-'use client';
-import React from 'react';
-import {useTranslations} from "use-intl";
+"use client"
+
+import {useTranslations} from "next-intl";
 import {
-    NavigationMenu, NavigationMenuContent,
+    NavigationMenu,
+    NavigationMenuContent,
     NavigationMenuItem,
     NavigationMenuLink,
-    NavigationMenuList, NavigationMenuTrigger
+    NavigationMenuList,
+    NavigationMenuTrigger
 } from "@/components/ui/navigation-menu";
 import {Link} from "@/i18n/navigation";
 import Image from "next/image";
 import {SearchIcon, ShoppingCartIcon, UserIcon} from "lucide-react";
+import {useIsMobile} from "@/hooks/use-mobile";
+import {SidebarTrigger} from "@/components/ui/sidebar";
 
 function AppHeader() {
     const t = useTranslations()
+    const isMobile = useIsMobile()
 
     return (
-        <>
-            <header className="w-screen flex items-center justify-between p-4">
-                <div className="flex flex-row items-center gap-8 w-full">
-                    <Link href="/">
-                        <Image src={t('App.logo.src')} alt={t('App.logo.alt')} sizes="(max-width: 600px) 20vw, 256px"
-                               style={{maxWidth: '100%', height: 24, width: 'auto'}} width={256} height={24}/>
-                    </Link>
-                    <NavigationMenu>
+        <header className="w-full flex items-center justify-between p-4 border-b">
+            <div className="flex flex-row items-center gap-8 w-full">
+                {/* Sidebar trigger - only visible on mobile */}
+                {isMobile && (
+                    <SidebarTrigger className="mr-2"/>
+                )}
+
+                <Link href="/">
+                    <Image src={t('App.logo.src')} alt={t('App.logo.alt')} sizes="(max-width: 600px) 20vw, 256px"
+                           style={{maxWidth: '100%', height: 24, width: 'auto'}} width={256} height={24}/>
+                </Link>
+
+                {!isMobile ? (
+                    <>
+                        {/* Desktop Navigation */}
                         <NavigationMenu>
                             <NavigationMenuList className="flex flex-row gap-2">
                                 <NavigationMenuItem>
@@ -36,7 +48,8 @@ function AppHeader() {
                                     <NavigationMenuTrigger className="hover:text-red-700">
                                         {t('Navigation.Collections.title')}
                                     </NavigationMenuTrigger>
-                                    <NavigationMenuContent className="flex flex-row justify-between md:w-[400px] lg:w-[500px]">
+                                    <NavigationMenuContent
+                                        className="flex flex-row justify-between md:w-[400px] lg:w-[500px]">
                                         <NavigationMenuLink asChild>
                                             <Link href="#">
                                                 {t('Navigation.Collections.highlight.title')}
@@ -118,37 +131,41 @@ function AppHeader() {
                                 </NavigationMenuItem>
                             </NavigationMenuList>
                         </NavigationMenu>
+                    </>
+                ) : null}
+
+                <div className="ml-auto flex flex-row items-center">
+                    <NavigationMenu>
+                        <NavigationMenuList className="flex flex-row gap-2">
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link href="#"
+                                          className="transition-all hover:drop-shadow-red-700 hover:drop-shadow-md hover:scale-110">
+                                        <SearchIcon/>
+                                    </Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link href="#"
+                                          className="transition-all hover:drop-shadow-red-700 hover:drop-shadow-md hover:scale-110">
+                                        <ShoppingCartIcon/>
+                                    </Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink asChild>
+                                    <Link href="#"
+                                          className="transition-all hover:drop-shadow-red-700 hover:drop-shadow-md hover:scale-110">
+                                        <UserIcon/>
+                                    </Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        </NavigationMenuList>
                     </NavigationMenu>
-                    <div className="ml-auto flex flex-row items-center">
-                        <NavigationMenu>
-                            <NavigationMenuList className="flex flex-row gap-2">
-                                <NavigationMenuItem>
-                                    <NavigationMenuLink asChild>
-                                        <Link href="#" className="transition-all hover:drop-shadow-red-700 hover:drop-shadow-md hover:scale-110">
-                                            <SearchIcon/>
-                                        </Link>
-                                    </NavigationMenuLink>
-                                </NavigationMenuItem>
-                                <NavigationMenuItem>
-                                    <NavigationMenuLink asChild>
-                                        <Link href="#" className="transition-all hover:drop-shadow-red-700 hover:drop-shadow-md hover:scale-110">
-                                            <ShoppingCartIcon/>
-                                        </Link>
-                                    </NavigationMenuLink>
-                                </NavigationMenuItem>
-                                <NavigationMenuItem>
-                                    <NavigationMenuLink asChild>
-                                        <Link href="#" className="transition-all hover:drop-shadow-red-700 hover:drop-shadow-md hover:scale-110">
-                                            <UserIcon/>
-                                        </Link>
-                                    </NavigationMenuLink>
-                                </NavigationMenuItem>
-                            </NavigationMenuList>
-                        </NavigationMenu>
-                    </div>
                 </div>
-            </header>
-        </>
+            </div>
+        </header>
     );
 }
 

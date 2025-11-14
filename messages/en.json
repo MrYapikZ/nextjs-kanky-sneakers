@@ -19,17 +19,18 @@
     "Sale": "Sale",
     "Collections": {
       "title": "Collections",
+      "highlight": {
+        "title": "Featured Collection"
+      },
       "items": {
         "KankyShoes": "Kanky Shoes",
-        "KankySportStyle": "Kanky SportStyle",
+        "KankySportStyle": "Kanky Sport Style",
         "KankyClassic": "Kanky Classic",
         "KankyBasketball": "Kanky Basketball",
         "KankyAthletic": "Kanky Athletic",
         "KankyNXT": "Kanky NXT"
-      },
-      "highlight": {
-        "title": "Highlight Item"
       }
     }
   }
 }
+
